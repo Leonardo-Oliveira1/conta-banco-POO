@@ -25,6 +25,8 @@ html{
 
 .container{
     display: flex;
+    flex-direction: column;
+    
     width: 329px;
     height: 580px;
 
@@ -57,9 +59,64 @@ html{
         }
     }
 
-}
-.options{
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    .options{
+        display: flex;
+        justify-content: center;
+        margin-top: 300px;
+        align-items: flex-end;
+        gap: 46px;
+
+        button{
+            width: 50px;
+            height: 50px;
+
+            background-color: $primary-color;
+
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+
+            img{
+                width: 25px;
+                height: 25px;
+                margin-top: 12px;
+            }
+
+            &:hover{
+                background-color: #7B6EB2;
+            }
+            
+            &:active{
+                background-color: #493A8C;
+            }
+
+
+            @mixin p-options {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                margin-top: 17px;
+                font-size: 1.5rem;
+                font-family: $primary-font;
+                color: black;
+                font-weight: 900;
+            }
+
+            #p-options1{
+                @include p-options();
+                margin-right: -15px;
+            }
+
+            #p-options2{
+                @include p-options();
+                margin-right: -6px;
+            }
+
+            #p-options3{
+                @include p-options();
+                margin-right: 2px;
+            }
+
+        }
+    }
 }

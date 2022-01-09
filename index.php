@@ -3,25 +3,7 @@
 
         $c1 = new Banco();
 
-        echo "<br>";
-
         $c1->abrirConta("CC");
-        print "<strong>Tipo de conta:</strong> {$c1->getTipo()}";
-        
-        echo "<br>";
-
-        print "<strong>Conta ativa?:</strong> {$c1->getStatus()}";
-
-        echo "<br>";
-
-        $c1->setnumConta(3);
-        print "<strong>Número da conta:</strong> {$c1->getnumConta()}";
-
-        
-        echo "<br>";
-        
-        $c1->setDono("Fulano de Tal");
-        print "<strong>Dono da conta:</strong> {$c1->getDono()}";
         
         ////////DIGITE AQUI////////
         $c1->depositar(500);
@@ -53,14 +35,9 @@
 
 
         <div class="options">
-            <button></button>
-            <p>Adicionar</p>
-
-            <button></button>
-            <p>Retirar</p>
-
-            <button></button>
-            <p>Mais</p>
+            <button><img src="CSS\IMG\deposit.jpg" alt="deposit icon"><p id="p-options1">Adicionar</p></button>
+            <button><img src="CSS\IMG\withdraw.png" alt="withdraw icon"><p id="p-options2">Retirar</p></button>
+            <button><img src="CSS\IMG\more.png" alt="more icon"><p id="p-options3">Mais</p></button>
         </div>
 
     </div>
