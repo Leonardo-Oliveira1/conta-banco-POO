@@ -59,6 +59,74 @@ html{
         }
     }
 
+
+    .amount{
+        position: absolute;
+        top: 192px;
+
+        h2{
+            font-family: $primary-font;
+            font-size: 2.1rem;
+            margin-left: 18px;
+        }
+
+
+        input[type=text] {
+            font-family: $secondary-font;
+            font-weight: 600;
+            font-size: 1.4rem;
+            padding: 0 12px;
+            width: 291px;
+            height: 41px;
+            margin: 6px 18px;
+            display: inline-block;
+            background-color: #E5E5E5;
+            border: none;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        
+
+        .deposit{
+            visibility: hidden;
+        }
+        .deposit.active{
+            visibility: visible;
+        }
+
+        .withdraw{
+            visibility: hidden;
+        }
+
+        .withdraw.active{
+            visibility: visible;
+        }
+
+
+        .withdraw{
+            position: absolute;
+            top: 0px;
+        }
+
+        input[type=submit]{
+            background-color: $primary-color;
+            border-radius: 6px;
+            margin: 9px 199px;
+            border: none;
+            cursor: pointer;
+
+            width: 110px;
+            height: 31px;
+
+            color: white;
+            font-size: 1.4rem;
+            font-family: $secondary-font;
+            font-weight: 600;
+            text-decoration: none;
+
+          }
+    }
+
     .options{
         display: flex;
         justify-content: center;

@@ -1,5 +1,6 @@
 <?php 
 
+
 Class Banco{
     public $numConta;
     protected $tipo; //Conta corrente ou poupança
@@ -7,6 +8,8 @@ Class Banco{
     private $saldo; 
     private $status; //aberto ou fechado
 
+
+    
 
     public function setnumConta($nC){
         $this->numConta = $nC;
@@ -81,15 +84,23 @@ Class Banco{
     }
 
     public function depositar($deposito){
+        $deposito = $_POST['quantia-deposit'];
+        
+        if($deposito != null){
         if($this->status == true){
             echo "<p>Você depositou {$deposito} reais na sua conta</p>";
             $this->setSaldo($this->saldo + $deposito);
         }else{
             echo "<p>Você não possui uma conta aberta no banco.</p>";
         }
+    }else{
+        $deposito == 0;
+        echo "<p>Insira alguma quantia.</p>";
     }
+}
 
     public function sacar($saque){
+        $saque = $_POST['quantia-withdraw'];
         if($this->status == true){
             if($this->saldo != 0){
                 if($this->saldo >= $saque){

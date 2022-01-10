@@ -1,18 +1,9 @@
     <?php 
         require_once 'class.php';
-
         $c1 = new Banco();
+        $c1->abrirConta("CP");
+        $c1->depositar(0);   
 
-        $c1->abrirConta("CC");
-        
-        ////////DIGITE AQUI////////
-        $c1->depositar(500);
-
-        ///////////////////////////
-
-
-
-        print "<br><strong>Saldo:</strong>  {$c1->getSaldo()} reais";
     ?>
 
 <!DOCTYPE html>
@@ -28,19 +19,36 @@
 
     <div class="container">
 
+
         <div class="saldoDiv">
             <p>Saldo</p>
             <h1>R$ <?php print "{$c1->getSaldo()}"; ?></h1>
         </div>
 
+        <div class="amount">
+                <form class="deposit active" name="amount-deposit" method="post">
+                    <h2>Depositar</h2>
+                    <input type="text" name="quantia-deposit" placeholder="Digite a quantia para o depósito">
+                    <input type="submit" value="Confirmar">
+                </form>
+
+                <form class="withdraw" name="amount-withdraw" method="post">
+                    <h2>Sacar</h2>
+                    <input type="text" name="quantia-withdraw" placeholder="Digite a quantia para o saque">
+                    <input type="submit" value="Confirmar">
+                </form>
+
+        </div>
+
 
         <div class="options">
-            <button><img src="CSS\IMG\deposit.jpg" alt="deposit icon"><p id="p-options1">Adicionar</p></button>
-            <button><img src="CSS\IMG\withdraw.png" alt="withdraw icon"><p id="p-options2">Retirar</p></button>
+            <button onclick="Adicionar()"><img src="CSS\IMG\deposit.jpg" alt="deposit icon"><p id="p-options1">Adicionar</p></button>
+            <button onclick="Retirar()"><img src="CSS\IMG\withdraw.png" alt="withdraw icon"><p id="p-options2">Retirar</p></button>
             <button><img src="CSS\IMG\more.png" alt="more icon"><p id="p-options3">Mais</p></button>
         </div>
 
     </div>
 
+    <script src="JS/script.js"></script>
 </body>
 </html>
